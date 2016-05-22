@@ -23,3 +23,5 @@ Others:
 	You gain color bullets by destroys a color group that has 3+ adjacent dots with same color
 	
 	Enemy only die when they touch the same color dot
+	
+	You will die if you touch the enemy with different color
