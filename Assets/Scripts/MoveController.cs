@@ -35,18 +35,19 @@ public class MoveController : MonoBehaviour {
 	}
 
 	void MoveAndRotate() {
-		inputDir = Vector2.zero;
 		inputDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-		if(inputDir.magnitude<=0.6f)	inputDir = Vector2.zero;
-		if(inputDir.magnitude != 0){
+
+		if(inputDir.x != 0 || inputDir.y != 0){
 			inputDir.Normalize();
 			if(inputDir.y<0)
 				currentAngle = Vector3.Angle(Vector3.left,inputDir);
 			else
 				currentAngle = -Vector3.Angle(Vector3.left,inputDir);
-			rigid.MoveRotation(currentAngle);
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(new Vector3(0,0,currentAngle)),Time.deltaTime*10);
+
 			rigid.AddForce(inputDir * forcePower * 1);
 		}
+
 	}
 
 	void Sprint() {

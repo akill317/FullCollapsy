@@ -67,6 +67,14 @@ public class Sparkling : MonoBehaviour {
 				lastLightUpTime = Time.time;
 			}
 		}
+		if(col.tag == "Player" && tag == "Dot"){
+			col.GetComponent<FireController>().touchDotID = GetComponent<Dot>().id;
+		}
+	}
+	void OnTriggerStay2D(Collider2D col){
+		if(col.tag == "Player" && tag == "Dot"){
+			col.GetComponent<FireController>().touchDotID = GetComponent<Dot>().id;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D col){

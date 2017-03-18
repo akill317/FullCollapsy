@@ -24,6 +24,9 @@ public class FireController : MonoBehaviour {
 
 	public Transform playerPieces;
 
+	public int touchDotID = -1;
+	Vector2 dotPos = Vector2.zero;
+
 	// Use this for initialization
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -50,8 +53,10 @@ public class FireController : MonoBehaviour {
 	void GetBullets(){
 		if(Time.time - lastChangeBulletTime >= changeBulletInterval|| Time.time == 0){
 			lastChangeBulletTime = Time.time;
-			Vector2 playerPos = transform.position;
-			Collider2D hitCol = Physics2D.OverlapPoint(playerPos,LayerMask.GetMask("Dots"));
+//			Vector2 playerPos = transform.position;
+			if(touchDotID != -1)
+				dotPos = gm.GetTargetPosition(touchDotID);
+			Collider2D hitCol = Physics2D.OverlapPoint(dotPos,LayerMask.GetMask("Dots"));
 			if(hitCol != null){
 				if(hitCol.tag == "Dot"){
 					Dot d = hitCol.GetComponent<Dot>();
@@ -101,7 +106,7 @@ public class FireController : MonoBehaviour {
 				Vector3 faceDir = transform.TransformDirection(Vector3.left) + transform.position;
 				Vector2 fireDir = faceDir - transform.position;
 				fireDir.Normalize();
-				Transform bullet = PoolManager.Pools["BulletsPool"].Spawn("Bullet",transform.position,Quaternion.FromToRotation(Vector3.up,fireDir));
+				Transform bullet = PoolManager.Pools["BulletsPool"].Spawn("Bullet",transform.position,Quaternion.Euler(new Vector3(0,0,transform.rotation.eulerAngles.z - 90)));
 				bullet.GetComponent<Bullet>().color = bulletColor;
 				bullet.GetComponent<SpriteRenderer>().color = gm.GetColorByString(bulletColor);
 				bullet.GetComponent<Rigidbody2D>().velocity = bulletSpeed * fireDir;

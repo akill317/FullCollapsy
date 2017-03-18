@@ -1,15 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScoreCounter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MoveController.cs">
     <Files>
-      <File FileName="Assets/Scripts/MoveController.cs" Line="72" Column="3" />
-      <File FileName="Assets/Scripts/ScoreCounter.cs" Line="30" Column="23" />
-      <File FileName="Assets/Scripts/PlayerManager.cs" Line="14" Column="20" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="81" Column="55" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="69" Column="61" />
-      <File FileName="Assets/Scripts/FireController.cs" Line="48" Column="84" />
-      <File FileName="Assets/Scripts/SpawnEnemyControl.cs" Line="24" Column="4" />
-      <File FileName="Assets/Scripts/StartButton.cs" Line="51" Column="72" />
+      <File FileName="Assets/Scripts/MoveController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/StartButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ScoreCounter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FireController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Sparkling.cs" Line="72" Column="4" />
+      <File FileName="Assets/Scripts/Dot.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

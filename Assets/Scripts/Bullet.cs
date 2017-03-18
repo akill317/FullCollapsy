@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour {
 	void OnEnable(){
 		GetComponent<SpriteRenderer>().enabled = true;
 		GetComponent<Collider2D>().enabled = true;
-		Invoke("DespawnSelf",3);
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
@@ -23,6 +22,10 @@ public class Bullet : MonoBehaviour {
 				Camera.main.GetComponent<CameraShake>().shakeAmount = 0.2f;
 				DisableSelfAndPlayParticle();
 			}
+		}
+
+		if(transform.position.magnitude > 50){
+			DespawnSelf();
 		}
 	}
 

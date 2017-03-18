@@ -69,6 +69,7 @@ public class PlayerManager : MonoBehaviour {
 		fireControl.color = "White";
 		fireControl.bulletNum = 0;
 		fireControl.ChangeColorToNewBulletColor(Color.white);
+		fireControl.touchDotID = -1;
 	}
 
 	void PlayerDie(){
